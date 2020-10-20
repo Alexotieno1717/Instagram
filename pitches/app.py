@@ -7,7 +7,7 @@ app = create_app('development')
 
 manager = Manager(app)
 migrate = Migrate(app, db)
-# manager.add_command('serve', Server)
+manager.add_command('serve', Server)
 manager.add_command('db', MigrateCommand)
 
 
