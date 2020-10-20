@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from instagram.models import Post
 
 
 # Create your views here.
@@ -19,6 +20,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    images = Post.objects.all()
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -37,6 +39,7 @@ def profile(request):
     context = {
         'u_form': u_form,
         'p_form': p_form,
+        'images': images
     }
 
     return render(request, 'users/profile.html', context)
