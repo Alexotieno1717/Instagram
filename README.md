@@ -33,3 +33,13 @@ Run the application
     python manage.py runserver 
 Open in browser
     Open the application on your browser 127.0.0.1:8000.
+
+### Technology used
+* Python3.6
+* Django 1.11
+* Heroku
+
+### Known Bugs
+Some functionalty did not work search,likes and comment as expected
+
+### 
