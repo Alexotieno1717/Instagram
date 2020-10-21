@@ -17,21 +17,21 @@ Click https://instagramapp01.herokuapp.com/ to visit the site
 
 ### Setup and Installation
 
-Cloning the repository:
+##### Cloning the repository:
     https://github.com/Alexotieno1717/Instagram
 
-Navigate into the folder and install requirements
+##### Navigate into the folder and install requirements
     cd Instagram and  pip install -r requirements.txt 
 
-Install and activate Virtual
+##### Install and activate Virtual
     python3 -m venv venv - source venv/bin/activate 
-Setup Database
+##### Setup Database
     python manage.py makemigrations instagram
-Migrate
+##### Migrate
     python manage.py migrate 
-Run the application
+##### Run the application
     python manage.py runserver 
-Open in browser
+##### Open in browser
     Open the application on your browser 127.0.0.1:8000.
 
 ### Technology used
