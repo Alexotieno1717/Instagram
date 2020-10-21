@@ -1,0 +1,56 @@
+{% extends 'instagram/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for post in posts %}
+    <div class="card mt-3 card-custom">
+        <div class="card-header">
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <div class="pull-right">
+                <a class="doted" href="#" data-toggle="modal" data-target="#exampleModal">...</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <img src="{{ post.image.url }}" alt="" class="img-responsive" width="100%">
+            <div class="icons pt-3">
+                <img src="https://img.icons8.com/windows/40/000000/hearts.png"/>
+                <a href="{% url 'post-detail' post.id %}"><img src="https://img.icons8.com/ios/40/000000/topic.png"/></a>
+                <img src="https://img.icons8.com/ios/40/000000/sent.png"/>
+                <br> <p>0 likes</p>
+            </div>
+            <h6><a class="article-title" href="{% url 'post-detail' post.id %}"> <span class="author1">{{ post.author }}</span> {{ post.title }}</a></h6>
+            <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <div class="card-footer">
+            <form class="d-flex">
+                <input id="postForm" type="text" class="form-control" placeholder="Add a comment...">
+                <button class="btn info">Post</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade pt-5 mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+            <p class="text-danger">Report</p>
+            <hr>
+            <p class="text-danger">Unfollow</p>
+            <hr>
+            <p>Go to Post</p>
+            <hr>
+            <p>Share</p>
+            <hr>
+            <p>Copy Link</p>
+            <hr>
+            <a class="text-dark" href="#" data-dismiss="modal">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
