@@ -1,5 +1,5 @@
 SECRET_KEY=u9^$069o51#hc6%on$c7j+*y5u@4i0zgdy39gj5uq^hu$a@oj$
-ALLOWED_HOST=*
+ALLOWED_HOST=instagramapp01.herokuapp.com
 DEBUG=False
 DB_NAME=d5iqmjo2nu7hh8
 DB_USER=pfqjsoxsyxopbx
